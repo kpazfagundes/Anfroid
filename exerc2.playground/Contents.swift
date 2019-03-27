@@ -68,15 +68,15 @@ bank.deposit(value: 120, from: "1234567")
 bank.deposit(value: 15, from: "1234567")
 
 do {
-    try bank.withdrawl(value: 263)
+    try bank.withdrawl(value: 150)
     try bank.withdrawl(value: 40)
 } catch BankAccountError.insuficientFounds(let currentBalance){
-    print("Insuficient founds. CurrentBalance: \(currentBalance)")
+    print("Saldo Insuficiente! Saldo Atual: \(currentBalance)")
 }
 bank.deposit(value: 200, from: "1234567")
 do {
-    try bank.withdrawl(value: 20)
+    try bank.withdrawl(value: 5000)
 } catch BankAccountError.insuficientFounds(let currentBalance){
-    print("Insuficient founds. CurrentBalance: \(currentBalance)")
+    print("Saldo Insuficiente! Saldo Atual: \(currentBalance)")
 }
 print(bank.formattedStatement())
