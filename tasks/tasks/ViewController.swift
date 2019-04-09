@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         let okAction = UIAlertAction(title: "ok", style: .default, handler: { _ in guard let newtask = alertController.textFields?.first?.text else { return}
             self.items.append(Todo(task: newtask))
+            self.tableView.reloadData()
         })
         let cancelAction = UIAlertAction( title: "Cancelar", style: .cancel, handler: nil)
         alertController.addAction(okAction)
@@ -67,8 +68,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("Seleção do item \(items[indexPath.row])")
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let removeAction = UIContextualAction(style: .destructive, title: "Remover", handler: {(action, view, completionHandler) in completionHandler(true)})
+        let removeAction = UIContextualAction(style: .destructive, title: "Remover", handler: {(action, view, completionHandler) in
+            self.items.remove(at: indexPath.row)
+            tableView.reloadData()
+            completionHandler(true)})
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [removeAction])
+        return swipeConfiguration
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let completitionAction = UIContextualAction(style: .normal, title: "Concluído", handler: {(action, view, completionHandler) in
+            self.items[indexPath.row].isCompleted.toggle()
+            tableView.reloadData()
+            completionHandler(true)})
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [completitionAction])
         return swipeConfiguration
     }
 

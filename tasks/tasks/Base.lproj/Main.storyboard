@@ -42,7 +42,6 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="ok" destination="zQE-fI-QNN" id="J5m-9u-sGs"/>
                         <outlet property="tableView" destination="5CX-1U-VhL" id="Epo-hT-NqW"/>
                     </connections>
                 </viewController>
