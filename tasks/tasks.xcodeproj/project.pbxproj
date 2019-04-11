@@ -15,6 +15,8 @@
 		143231FB22542E1500269F13 /* tasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143231FA22542E1500269F13 /* tasksTests.swift */; };
 		1432320622542E1500269F13 /* tasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1432320522542E1500269F13 /* tasksUITests.swift */; };
 		1432321A2254351700269F13 /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143232192254351700269F13 /* TodoItemCell.swift */; };
+		148ECAA4225D742500D41850 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ECAA2225D742500D41850 /* TodoRepository.swift */; };
+		148ECAA5225D742500D41850 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148ECAA3225D742500D41850 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		1432320522542E1500269F13 /* tasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasksUITests.swift; sourceTree = "<group>"; };
 		1432320722542E1500269F13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		143232192254351700269F13 /* TodoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
+		148ECAA2225D742500D41850 /* TodoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
+		148ECAA3225D742500D41850 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				143231E522542E1400269F13 /* AppDelegate.swift */,
+				148ECAA3225D742500D41850 /* NetworkService.swift */,
+				148ECAA2225D742500D41850 /* TodoRepository.swift */,
 				143231E722542E1400269F13 /* ViewController.swift */,
 				143231E922542E1400269F13 /* Main.storyboard */,
 				143231EC22542E1500269F13 /* Assets.xcassets */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148ECAA5225D742500D41850 /* NetworkService.swift in Sources */,
 				143231E822542E1400269F13 /* ViewController.swift in Sources */,
+				148ECAA4225D742500D41850 /* TodoRepository.swift in Sources */,
 				1432321A2254351700269F13 /* TodoItemCell.swift in Sources */,
 				143231E622542E1400269F13 /* AppDelegate.swift in Sources */,
 			);
