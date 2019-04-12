@@ -25,27 +25,27 @@ class ViewController: UIViewController {
     
     @IBAction func onclick(_ sender: Any) {
         do{
-            let age = try calculateAge(from: birth_Year.text ?? "", dateFormat: "dd/MM/yyyy")
-            age.text = String(age)     + " anos"
-            age.text = ""
+            let ageResult = try calculateAge(from: birth_Year.text ?? "", dateFormat: "dd/MM/yyyy")
+            age.text = String(ageResult)     + " anos"
+            birth_Year.text = ""
         } catch AgeError.emptyText {
-            birthdateTextErrorField.text = "Data não informada!"
-            birthdateTextField.text = "00"
+            age.text = "Data não informada!"
+            birth_Year.text = "00"
         } catch AgeError.futureBirthday {
-            birthdateTextErrorField.text = "Prevendo o futuro?"
-            birthdateTextField.text = "00"
+            age.text = "Prevendo o futuro?"
+            birth_Year.text = "00"
         } catch AgeError.invalidDate {
-            birthdateTextErrorField.text = "Data inválida!"
-            birthdateTextField.text = "00"
+            age.text = "Data inválida!"
+            birth_Year.text = "00"
         } catch AgeError.invalidFormat {
-            birthdateTextErrorField.text = "Formato inválido!"
-            birthdateTextField.text = "00"
+            age.text = "Formato inválido!"
+            birth_Year.text = "00"
         } catch AgeError.unknown {
-            birthdateTextErrorField.text = "Erro desconhecido!"
-            birthdateTextField.text = "00"
+            age.text = "Erro desconhecido!"
+            birth_Year.text = "00"
         } catch {
-            birthdateTextErrorField.text = "Erro inesperado!"
-            birthdateTextField.text = "00"
+            age.text = "Erro inesperado!"
+            birth_Year.text = "00"
         }
         
     }
@@ -74,8 +74,7 @@ class ViewController: UIViewController {
                 throw AgeError.invalidFormat
             }
             
-        }
-        
+        }        
         throw AgeError.unknown
     
     }
